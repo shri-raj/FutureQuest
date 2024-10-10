@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/teststyle.css">
+    <title>Campus Quiz</title>
+    
+</head>
+<body>
+    <header>
+        <div class="Greeting"><img src="../logo.png" alt="FutureQuest" width="323" height="193"></div>
+        <p>Choose the options best suitable for you</p>
+    </header>
+    <main>
+        <form id="quiz-form" action="/predict" method="POST">
+
+            <!-- Analytical Thinking, Problem Solving, Creativity, Communication Skills-->
+            <div id="section-1" class="section active">
+                <section>
+                    <h2>Analytical Thinking</h2>
+
+                    <div class="question">
+                        <p>I enjoy breaking down complex problems into smaller, manageable parts.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="thinking_q1" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="thinking_q1" value="4"> Agree</label>
+                            <label><input type="radio" name="thinking_q1" value="3"> Neutral</label>
+                            <label><input type="radio" name="thinking_q1" value="2"> Disagree</label>
+                            <label><input type="radio" name="thinking_q1" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p>I often analyze data or information to make informed decisions.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="thinking_q2" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="thinking_q2" value="4"> Agree</label>
+                            <label><input type="radio" name="thinking_q2" value="3"> Neutral</label>
+                            <label><input type="radio" name="thinking_q2" value="2"> Disagree</label>
+                            <label><input type="radio" name="thinking_q2" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p>I feel confident in my ability to evaluate different perspectives on an issue.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="thinking_q3" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="thinking_q3" value="4"> Agree</label>
+                            <label><input type="radio" name="thinking_q3" value="3"> Neutral</label>
+                            <label><input type="radio" name="thinking_q3" value="2"> Disagree</label>
+                            <label><input type="radio" name="thinking_q3" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+
+                    <h2>Problem Solving</h2>
+                    <div class="question">
+                        <p>I take the initiative to find solutions when faced with challenges.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="problem_q1" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="problem_q1" value="4"> Agree</label>
+                            <label><input type="radio" name="problem_q1" value="3"> Neutral</label>
+                            <label><input type="radio" name="problem_q1" value="2"> Disagree</label>
+                            <label><input type="radio" name="problem_q1" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <p>I can think of multiple ways to approach a problem.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="problem_q2" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="problem_q2" value="4"> Agree</label>
+                            <label><input type="radio" name="problem_q2" value="3"> Neutral</label>
+                            <label><input type="radio" name="problem_q2" value="2"> Disagree</label>
+                            <label><input type="radio" name="problem_q2" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+                    
+                    <div class="question">
+                        <p>I often seek out new strategies to overcome obstacles.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="problem_q3" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="problem_q3" value="4"> Agree</label>
+                            <label><input type="radio" name="problem_q3" value="3"> Neutral</label>
+                            <label><input type="radio" name="problem_q3" value="2"> Disagree</label>
+                            <label><input type="radio" name="problem_q3" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+                    
+                    <h2>Creativity</h2>
+                    <div class="question">
+                        <p> I regularly come up with unique ideas or solutions.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="creativity_q1" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="creativity_q1" value="4"> Agree</label>
+                            <label><input type="radio" name="creativity_q1" value="3"> Neutral</label>
+                            <label><input type="radio" name="creativity_q1" value="2"> Disagree</label>
+                            <label><input type="radio" name="creativity_q1" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <p>  I enjoy thinking outside the box when working on projects.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="creativity_q2" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="creativity_q2" value="4"> Agree</label>
+                            <label><input type="radio" name="creativity_q2" value="3"> Neutral</label>
+                            <label><input type="radio" name="creativity_q2" value="2"> Disagree</label>
+                            <label><input type="radio" name="creativity_q2" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <p> I often find new ways to express my thoughts and feelings.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="creativity_q3" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="creativity_q3" value="4"> Agree</label>
+                            <label><input type="radio" name="creativity_q3" value="3"> Neutral</label>
+                            <label><input type="radio" name="creativity_q3" value="2"> Disagree</label>
+                            <label><input type="radio" name="creativity_q3" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+                    <h2>Communication Skills</h2>
+                    <div class="question">
+                        <p>I feel comfortable sharing my ideas in group discussions.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="communication_q1" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="communication_q1" value="4"> Agree</label>
+                            <label><input type="radio" name="communication_q1" value="3"> Neutral</label>
+                            <label><input type="radio" name="communication_q1" value="2"> Disagree</label>
+                            <label><input type="radio" name="communication_q1" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <p>I am able to explain my thoughts clearly to others.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="communication_q2" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="communication_q2" value="4"> Agree</label>
+                            <label><input type="radio" name="communication_q2" value="3"> Neutral</label>
+                            <label><input type="radio" name="communication_q2" value="2"> Disagree</label>
+                            <label><input type="radio" name="communication_q2" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <p>I listen actively to others when they speak.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="communication_q3" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="communication_q3" value="4"> Agree</label>
+                            <label><input type="radio" name="communication_q3" value="3"> Neutral</label>
+                            <label><input type="radio" name="communication_q3" value="2"> Disagree</label>
+                            <label><input type="radio" name="communication_q3" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+                    <button class="next-section" type="button" onclick="nextSection(2)">Next</button>
+                </section>
+            </div>
+
+            <!-- Leadership, Empathy, Teamwork, Scientific Interest-->
+            <div id="section-2" class="section">
+                <section>
+                    <h2>Leadership</h2>
+            
+                    <div class="question">
+                        <p>I feel confident taking charge of group activities or projects.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="leadership_q1" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="leadership_q1" value="4"> Agree</label>
+                            <label><input type="radio" name="leadership_q1" value="3"> Neutral</label>
+                            <label><input type="radio" name="leadership_q1" value="2"> Disagree</label>
+                            <label><input type="radio" name="leadership_q1" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <div class="question">
+                        <p>I enjoy motivating and inspiring others to achieve their goals.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="leadership_q2" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="leadership_q2" value="4"> Agree</label>
+                            <label><input type="radio" name="leadership_q2" value="3"> Neutral</label>
+                            <label><input type="radio" name="leadership_q2" value="2"> Disagree</label>
+                            <label><input type="radio" name="leadership_q2" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <div class="question">
+                        <p>I can effectively delegate tasks to ensure team success.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="leadership_q3" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="leadership_q3" value="4"> Agree</label>
+                            <label><input type="radio" name="leadership_q3" value="3"> Neutral</label>
+                            <label><input type="radio" name="leadership_q3" value="2"> Disagree</label>
+                            <label><input type="radio" name="leadership_q3" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+                    <h2>Empathy</h2>
+                    <div class="question">
+                        <p>I can easily understand how others are feeling.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="empathy_q1" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="empathy_q1" value="4"> Agree</label>
+                            <label><input type="radio" name="empathy_q1" value="3"> Neutral</label>
+                            <label><input type="radio" name="empathy_q1" value="2"> Disagree</label>
+                            <label><input type="radio" name="empathy_q1" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <div class="question">
+                        <p>I try to consider other people's perspectives in conversations.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="empathy_q2" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="empathy_q2" value="4"> Agree</label>
+                            <label><input type="radio" name="empathy_q2" value="3"> Neutral</label>
+                            <label><input type="radio" name="empathy_q2" value="2"> Disagree</label>
+                            <label><input type="radio" name="empathy_q2" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <div class="question">
+                        <p>I often help friends or classmates when they are struggling emotionally.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="empathy_q3" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="empathy_q3" value="4"> Agree</label>
+                            <label><input type="radio" name="empathy_q3" value="3"> Neutral</label>
+                            <label><input type="radio" name="empathy_q3" value="2"> Disagree</label>
+                            <label><input type="radio" name="empathy_q3" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+                    <h2>Teamwork</h2>
+                    <div class="question">
+                        <p>I enjoy collaborating with others to achieve a common goal.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="teamwork_q1" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="teamwork_q1" value="4"> Agree</label>
+                            <label><input type="radio" name="teamwork_q1" value="3"> Neutral</label>
+                            <label><input type="radio" name="teamwork_q1" value="2"> Disagree</label>
+                            <label><input type="radio" name="teamwork_q1" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <div class="question">
+                        <p>I am able to compromise and find solutions that work for everyone in a team.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="teamwork_q2" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="teamwork_q2" value="4"> Agree</label>
+                            <label><input type="radio" name="teamwork_q2" value="3"> Neutral</label>
+                            <label><input type="radio" name="teamwork_q2" value="2"> Disagree</label>
+                            <label><input type="radio" name="teamwork_q2" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <div class="question">
+                        <p>I contribute positively to group dynamics and discussions.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="teamwork_q3" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="teamwork_q3" value="4"> Agree</label>
+                            <label><input type="radio" name="teamwork_q3" value="3"> Neutral</label>
+                            <label><input type="radio" name="teamwork_q3" value="2"> Disagree</label>
+                            <label><input type="radio" name="teamwork_q3" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+                    <h2>Scientific Interest</h2>
+                    <div class="question">
+                        <p>I find myself curious about how the world works at a scientific level.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="science_q1" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="science_q1" value="4"> Agree</label>
+                            <label><input type="radio" name="science_q1" value="3"> Neutral</label>
+                            <label><input type="radio" name="science_q1" value="2"> Disagree</label>
+                            <label><input type="radio" name="science_q1" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <div class="question">
+                        <p>I enjoy learning about scientific concepts and discoveries.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="science_q2" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="science_q2" value="4"> Agree</label>
+                            <label><input type="radio" name="science_q2" value="3"> Neutral</label>
+                            <label><input type="radio" name="science_q2" value="2"> Disagree</label>
+                            <label><input type="radio" name="science_q2" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <div class="question">
+                        <p>I often seek out information related to scientific topics.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="science_q3" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="science_q3" value="4"> Agree</label>
+                            <label><input type="radio" name="science_q3" value="3"> Neutral</label>
+                            <label><input type="radio" name="science_q3" value="2"> Disagree</label>
+                            <label><input type="radio" name="science_q3" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <button class="next-section" type="button" onclick="nextSection(3)">Next</button>
+                </section>
+            </div>            
+
+
+            <!-- Technological Interest, Design Skill, Mathematical Skill, Medical Knowledge-->
+            <div id="section-3" class="section">
+                <section>
+                    <h2>Technological Interest</h2>
+            
+                    <div class="question">
+                        <p>I am enthusiastic about learning new technologies and tools.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="tech_q1" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="tech_q1" value="4"> Agree</label>
+                            <label><input type="radio" name="tech_q1" value="3"> Neutral</label>
+                            <label><input type="radio" name="tech_q1" value="2"> Disagree</label>
+                            <label><input type="radio" name="tech_q1" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <div class="question">
+                        <p>I often explore how technology can improve everyday tasks.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="tech_q2" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="tech_q2" value="4"> Agree</label>
+                            <label><input type="radio" name="tech_q2" value="3"> Neutral</label>
+                            <label><input type="radio" name="tech_q2" value="2"> Disagree</label>
+                            <label><input type="radio" name="tech_q2" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <div class="question">
+                        <p>I enjoy using technology to solve problems.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="tech_q3" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="tech_q3" value="4"> Agree</label>
+                            <label><input type="radio" name="tech_q3" value="3"> Neutral</label>
+                            <label><input type="radio" name="tech_q3" value="2"> Disagree</label>
+                            <label><input type="radio" name="tech_q3" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <h2>Design Skills</h2>
+            
+                    <div class="question">
+                        <p>I have a good eye for aesthetics and visual appeal.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="design_q1" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="design_q1" value="4"> Agree</label>
+                            <label><input type="radio" name="design_q1" value="3"> Neutral</label>
+                            <label><input type="radio" name="design_q1" value="2"> Disagree</label>
+                            <label><input type="radio" name="design_q1" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <div class="question">
+                        <p>I enjoy creating and designing visual content or products.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="design_q2" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="design_q2" value="4"> Agree</label>
+                            <label><input type="radio" name="design_q2" value="3"> Neutral</label>
+                            <label><input type="radio" name="design_q2" value="2"> Disagree</label>
+                            <label><input type="radio" name="design_q2" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <div class="question">
+                        <p>I often think about how to improve the design of existing items.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="design_q3" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="design_q3" value="4"> Agree</label>
+                            <label><input type="radio" name="design_q3" value="3"> Neutral</label>
+                            <label><input type="radio" name="design_q3" value="2"> Disagree</label>
+                            <label><input type="radio" name="design_q3" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <h2>Mathematical Skills</h2>
+            
+                    <div class="question">
+                        <p>I feel confident working with numbers and solving mathematical problems.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="math_q1" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="math_q1" value="4"> Agree</label>
+                            <label><input type="radio" name="math_q1" value="3"> Neutral</label>
+                            <label><input type="radio" name="math_q1" value="2"> Disagree</label>
+                            <label><input type="radio" name="math_q1" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <div class="question">
+                        <p>I enjoy tackling math challenges and puzzles.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="math_q2" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="math_q2" value="4"> Agree</label>
+                            <label><input type="radio" name="math_q2" value="3"> Neutral</label>
+                            <label><input type="radio" name="math_q2" value="2"> Disagree</label>
+                            <label><input type="radio" name="math_q2" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <div class="question">
+                        <p>I often use math in everyday situations to make decisions.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="math_q3" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="math_q3" value="4"> Agree</label>
+                            <label><input type="radio" name="math_q3" value="3"> Neutral</label>
+                            <label><input type="radio" name="math_q3" value="2"> Disagree</label>
+                            <label><input type="radio" name="math_q3" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <h2>Medical Knowledge</h2>
+            
+                    <div class="question">
+                        <p>I am interested in learning about human health and medicine.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="medical_q1" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="medical_q1" value="4"> Agree</label>
+                            <label><input type="radio" name="medical_q1" value="3"> Neutral</label>
+                            <label><input type="radio" name="medical_q1" value="2"> Disagree</label>
+                            <label><input type="radio" name="medical_q1" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <div class="question">
+                        <p>I often read or research medical topics out of curiosity.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="medical_q2" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="medical_q2" value="4"> Agree</label>
+                            <label><input type="radio" name="medical_q2" value="3"> Neutral</label>
+                            <label><input type="radio" name="medical_q2" value="2"> Disagree</label>
+                            <label><input type="radio" name="medical_q2" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <div class="question">
+                        <p>I feel comfortable discussing health-related issues.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="medical_q3" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="medical_q3" value="4"> Agree</label>
+                            <label><input type="radio" name="medical_q3" value="3"> Neutral</label>
+                            <label><input type="radio" name="medical_q3" value="2"> Disagree</label>
+                            <label><input type="radio" name="medical_q3" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <button class="next-section" type="button" onclick="nextSection(4)">Next</button>
+                </section>
+            </div>            
+
+
+            <!-- Business Knowledge, Research Skills, Marketing Skills, Legal Knowledge -->
+            <div id="section-4" class="section">
+                <section>
+                    <h2>Legal Knowledge</h2>
+            
+                    <div class="question">
+                        <p>I am interested in understanding laws and legal systems.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="legal_q1" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="legal_q1" value="4"> Agree</label>
+                            <label><input type="radio" name="legal_q1" value="3"> Neutral</label>
+                            <label><input type="radio" name="legal_q1" value="2"> Disagree</label>
+                            <label><input type="radio" name="legal_q1" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <div class="question">
+                        <p>I often seek out information on legal rights and responsibilities.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="legal_q2" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="legal_q2" value="4"> Agree</label>
+                            <label><input type="radio" name="legal_q2" value="3"> Neutral</label>
+                            <label><input type="radio" name="legal_q2" value="2"> Disagree</label>
+                            <label><input type="radio" name="legal_q2" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <div class="question">
+                        <p>I feel confident discussing legal topics with others.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="legal_q3" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="legal_q3" value="4"> Agree</label>
+                            <label><input type="radio" name="legal_q3" value="3"> Neutral</label>
+                            <label><input type="radio" name="legal_q3" value="2"> Disagree</label>
+                            <label><input type="radio" name="legal_q3" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <h2>Business Acumen</h2>
+            
+                    <div class="question">
+                        <p>I enjoy learning about how businesses operate and succeed.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="business_q1" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="business_q1" value="4"> Agree</label>
+                            <label><input type="radio" name="business_q1" value="3"> Neutral</label>
+                            <label><input type="radio" name="business_q1" value="2"> Disagree</label>
+                            <label><input type="radio" name="business_q1" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <div class="question">
+                        <p>I can identify opportunities for improvement within a business context.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="business_q2" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="business_q2" value="4"> Agree</label>
+                            <label><input type="radio" name="business_q2" value="3"> Neutral</label>
+                            <label><input type="radio" name="business_q2" value="2"> Disagree</label>
+                            <label><input type="radio" name="business_q2" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <div class="question">
+                        <p>I am interested in financial management and marketing strategies.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="business_q3" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="business_q3" value="4"> Agree</label>
+                            <label><input type="radio" name="business_q3" value="3"> Neutral</label>
+                            <label><input type="radio" name="business_q3" value="2"> Disagree</label>
+                            <label><input type="radio" name="business_q3" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <h2>Research Skills</h2>
+            
+                    <div class="question">
+                        <p>I am skilled at finding reliable information on various topics.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="research_q1" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="research_q1" value="4"> Agree</label>
+                            <label><input type="radio" name="research_q1" value="3"> Neutral</label>
+                            <label><input type="radio" name="research_q1" value="2"> Disagree</label>
+                            <label><input type="radio" name="research_q1" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <div class="question">
+                        <p>I enjoy conducting thorough research for projects or assignments.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="research_q2" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="research_q2" value="4"> Agree</label>
+                            <label><input type="radio" name="research_q2" value="3"> Neutral</label>
+                            <label><input type="radio" name="research_q2" value="2"> Disagree</label>
+                            <label><input type="radio" name="research_q2" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <div class="question">
+                        <p>I can effectively analyze and summarize research findings.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="research_q3" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="research_q3" value="4"> Agree</label>
+                            <label><input type="radio" name="research_q3" value="3"> Neutral</label>
+                            <label><input type="radio" name="research_q3" value="2"> Disagree</label>
+                            <label><input type="radio" name="research_q3" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <h2>Marketing Skills</h2>
+            
+                    <div class="question">
+                        <p>I understand the importance of effectively promoting products or ideas.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="marketing_q1" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="marketing_q1" value="4"> Agree</label>
+                            <label><input type="radio" name="marketing_q1" value="3"> Neutral</label>
+                            <label><input type="radio" name="marketing_q1" value="2"> Disagree</label>
+                            <label><input type="radio" name="marketing_q1" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <div class="question">
+                        <p>I enjoy coming up with creative marketing strategies.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="marketing_q2" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="marketing_q2" value="4"> Agree</label>
+                            <label><input type="radio" name="marketing_q2" value="3"> Neutral</label>
+                            <label><input type="radio" name="marketing_q2" value="2"> Disagree</label>
+                            <label><input type="radio" name="marketing_q2" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <div class="question">
+                        <p>I can analyze target audiences to tailor marketing efforts.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="marketing_q3" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="marketing_q3" value="4"> Agree</label>
+                            <label><input type="radio" name="marketing_q3" value="3"> Neutral</label>
+                            <label><input type="radio" name="marketing_q3" value="2"> Disagree</label>
+                            <label><input type="radio" name="marketing_q3" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <button class="next-section" type="button" onclick="nextSection(5)">Next</button>
+                </section>
+            </div>
+            
+
+            <!--Teaching skills, SW Dev Knowledge, Artistic Skills, Attention to detail -->
+            <div id="section-5" class="section">
+                <section>
+                    <h2>Teaching Skills</h2>
+            
+                    <div class="question">
+                        <p>I feel comfortable explaining concepts to my peers.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="teaching_q1" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="teaching_q1" value="4"> Agree</label>
+                            <label><input type="radio" name="teaching_q1" value="3"> Neutral</label>
+                            <label><input type="radio" name="teaching_q1" value="2"> Disagree</label>
+                            <label><input type="radio" name="teaching_q1" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <div class="question">
+                        <p>I enjoy helping others learn new information or skills.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="teaching_q2" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="teaching_q2" value="4"> Agree</label>
+                            <label><input type="radio" name="teaching_q2" value="3"> Neutral</label>
+                            <label><input type="radio" name="teaching_q2" value="2"> Disagree</label>
+                            <label><input type="radio" name="teaching_q2" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <div class="question">
+                        <p>I can adapt my teaching style to meet the needs of different learners.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="teaching_q3" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="teaching_q3" value="4"> Agree</label>
+                            <label><input type="radio" name="teaching_q3" value="3"> Neutral</label>
+                            <label><input type="radio" name="teaching_q3" value="2"> Disagree</label>
+                            <label><input type="radio" name="teaching_q3" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <h2>Software Development Knowledge</h2>
+            
+                    <div class="question">
+                        <p>I am interested in learning programming languages and software development.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="software_q1" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="software_q1" value="4"> Agree</label>
+                            <label><input type="radio" name="software_q1" value="3"> Neutral</label>
+                            <label><input type="radio" name="software_q1" value="2"> Disagree</label>
+                            <label><input type="radio" name="software_q1" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <div class="question">
+                        <p>I enjoy creating applications or websites as a hobby.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="software_q2" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="software_q2" value="4"> Agree</label>
+                            <label><input type="radio" name="software_q2" value="3"> Neutral</label>
+                            <label><input type="radio" name="software_q2" value="2"> Disagree</label>
+                            <label><input type="radio" name="software_q2" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <div class="question">
+                        <p>I feel confident troubleshooting basic software issues.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="software_q3" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="software_q3" value="4"> Agree</label>
+                            <label><input type="radio" name="software_q3" value="3"> Neutral</label>
+                            <label><input type="radio" name="software_q3" value="2"> Disagree</label>
+                            <label><input type="radio" name="software_q3" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <h2>Artistic Skills</h2>
+            
+                    <div class="question">
+                        <p>I enjoy expressing myself through visual arts or crafts.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="artistic_q1" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="artistic_q1" value="4"> Agree</label>
+                            <label><input type="radio" name="artistic_q1" value="3"> Neutral</label>
+                            <label><input type="radio" name="artistic_q1" value="2"> Disagree</label>
+                            <label><input type="radio" name="artistic_q1" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <div class="question">
+                        <p>I often seek opportunities to create art in my free time.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="artistic_q2" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="artistic_q2" value="4"> Agree</label>
+                            <label><input type="radio" name="artistic_q2" value="3"> Neutral</label>
+                            <label><input type="radio" name="artistic_q2" value="2"> Disagree</label>
+                            <label><input type="radio" name="artistic_q2" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <div class="question">
+                        <p>I feel comfortable sharing my artistic work with others.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="artistic_q3" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="artistic_q3" value="4"> Agree</label>
+                            <label><input type="radio" name="artistic_q3" value="3"> Neutral</label>
+                            <label><input type="radio" name="artistic_q3" value="2"> Disagree</label>
+                            <label><input type="radio" name="artistic_q3" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <h2>Attention to Detail</h2>
+            
+                    <div class="question">
+                        <p>I pay close attention to details in my work or assignments.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="attention_q1" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="attention_q1" value="4"> Agree</label>
+                            <label><input type="radio" name="attention_q1" value="3"> Neutral</label>
+                            <label><input type="radio" name="attention_q1" value="2"> Disagree</label>
+                            <label><input type="radio" name="attention_q1" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <div class="question">
+                        <p>I often notice mistakes that others overlook.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="attention_q2" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="attention_q2" value="4"> Agree</label>
+                            <label><input type="radio" name="attention_q2" value="3"> Neutral</label>
+                            <label><input type="radio" name="attention_q2" value="2"> Disagree</label>
+                            <label><input type="radio" name="attention_q2" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <div class="question">
+                        <p>I strive for accuracy and precision in everything I do.</p>
+                        <div class="likert-scale">
+                            <label><input type="radio" name="attention_q3" value="5" required> Strongly Agree</label>
+                            <label><input type="radio" name="attention_q3" value="4"> Agree</label>
+                            <label><input type="radio" name="attention_q3" value="3"> Neutral</label>
+                            <label><input type="radio" name="attention_q3" value="2"> Disagree</label>
+                            <label><input type="radio" name="attention_q3" value="1"> Strongly Disagree</label>
+                        </div>
+                    </div>
+            
+                    <button class="submit" type="submit">Submit</button>
+                </section>
+            </div>
+            
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 FutureQuest. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/testscript.js') }}" defer></script>
+
+</body>
+</html>

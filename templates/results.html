@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..//static/result.css">
+    <title>Career Prediction Result</title>
+</head>
+<body>
+    <header>
+        <h1>Your Career Prediction</h1>
+    </header>
+    <main>
+        <div class="result-container">
+            <h2>Based on your responses, you should consider a career as:</h2>
+            <h3 class="career">{{ career }}</h3>
+            <a href="{{ url_for('questionnaire') }}" class="retry-button">Take the Questionnaire Again</a>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 FutureQuest. All rights reserved.</p>
+    </footer>
+</body>
+</html>
