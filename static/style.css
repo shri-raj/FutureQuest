@@ -3,7 +3,7 @@ body, html {
     padding: 0;
     height: 100%;
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #74ebd5, #9face6);
+    background: linear-gradient(135deg, #C96868, #FADFA1);
     color: #333;
     box-sizing: border-box;
     display: flex;
@@ -11,7 +11,7 @@ body, html {
 }
 
 header {
-    background-color: #74ebd5;
+    background-color: #C96868;
     padding: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -48,7 +48,7 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    color: #f70808;
+    color: #7EACB5;
 }
 
 /* Main Content */
@@ -79,7 +79,7 @@ main {
 
 #custom-button {
     padding: 15px 30px;
-    background-color: #f70808;
+    background-color: #7EACB5;
     color: #fff;
     font-size: 1.2rem;
     border: none;
@@ -90,13 +90,13 @@ main {
 }
 
 #custom-button:hover {
-    background-color: #860505;
+    background-color: #5e8a8b; /* Darker shade for hover */
 }
 
 .info-section {
     text-align: center;
     padding: 20px;
-    background-color: #fffaf0;
+    background-color: #FFF4EA;
     margin: 20px auto;
     width: 80%;
     border-radius: 8px;

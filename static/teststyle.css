@@ -1,13 +1,12 @@
 :root {
-    --primary-color: #3498db;
-    --secondary-color: #2ecc71;
-    --background-color: #ecf0f1;
-    --text-color: #34495e;
+    --primary-color: #C96868; /* Updated primary color */
+    --secondary-color: #7EACB5; /* Updated secondary color */
+    --background-color: #FFF4EA; /* Updated background color */
+    --text-color: #34495e; /* Keep text color */
 }
 
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #74ebd5, #9face6);
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -20,7 +19,7 @@ header, main, footer {
 }
 
 .submit-section {
-    background-color: #4CAF50; /* Green background */
+    background-color: #7EACB5; /* Updated button background color */
     color: white; /* White text */
     padding: 10px 20px; /* Padding for button */
     border: none; /* Remove border */
@@ -31,9 +30,8 @@ header, main, footer {
 }
 
 .submit-section:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #5e8a8b; /* Darker shade on hover */
 }
-
 
 header {
     background-color: var(--primary-color);
@@ -91,7 +89,7 @@ button[type="submit"], .next-section {
 }
 
 button[type="submit"]:hover, .next-section:hover {
-    background-color: #27ae60;
+    background-color: #6b9c9a; /* Darker shade for hover */
 }
 
 footer {

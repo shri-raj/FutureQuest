@@ -1,18 +1,25 @@
 :root {
-    --primary-color: #3498db;
-    --secondary-color: #2ecc71;
-    --background-color: #ecf0f1;
-    --text-color: #34495e;
+    --primary-color: #C96868; /* Updated primary color */
+    --secondary-color: #FADFA1; /* Updated secondary color */
+    --background-color: #FFF4EA; /* Updated background color */
+    --text-color: #7EACB5; /* Updated text color */
+}
+
+html, body {
+    height: 100%; /* Ensure the body takes the full height */
+    margin: 0; /* Remove default margin */
 }
 
 body {
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Column direction */
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #74ebd5, #9face6);
-    color: var(--text-color);
-    margin: 0;
-    padding: 0;
+    background: linear-gradient(135deg, #C96868, #FADFA1); /* Updated gradient */
+    color: #333; /* Better readability */
 }
-
+.logo {
+    flex:1
+}
 header {
     background-color: var(--primary-color);
     color: white;
@@ -21,6 +28,7 @@ header {
 }
 
 main {
+    flex: 1; /* Allow main to grow and fill the space */
     max-width: 800px;
     margin: 20px auto;
     background-color: white;
@@ -28,6 +36,10 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 40px;
     text-align: center;
+    display: flex; /* Flexbox for alignment */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .result-container {
@@ -40,6 +52,16 @@ main {
     font-weight: bold;
 }
 
+ul {
+    list-style-type: none; /* Remove default list styles */
+    padding: 0; /* Remove default padding */
+}
+
+li {
+    margin: 10px 0; /* Add some spacing between list items */
+    font-size: 20px; /* Slightly larger font size */
+}
+
 .retry-button {
     display: inline-block;
     margin-top: 20px;
@@ -48,19 +70,18 @@ main {
     color: white;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Added transform transition */
 }
 
 .retry-button:hover {
-    background-color: #27ae60;
+    background-color: #d0c68a; /* Updated hover color for better visibility */
+    transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
 footer {
     background-color: var(--primary-color);
     color: white;
     text-align: center;
-    padding: 10px;
-    position: relative;
-    bottom: 0;
+    padding: 20px; /* Increased padding for better spacing */
     width: 100%;
 }

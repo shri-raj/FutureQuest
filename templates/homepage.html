@@ -10,7 +10,7 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="../logo.png" alt="FutureQuest" height="100">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="FutureQuest" height="100">
             </div>
             <nav>
                 <ul>
@@ -24,10 +24,12 @@
     <main>
         <section class="info-section">
             <div class="logo">
-                <img src="../logo.png" alt="FutureQuest" height="200"> <!-- Added logo here -->
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="FutureQuest" height="200"> <!-- Added logo here -->
             </div>
             <h2>Why Take This Test?</h2>
-            <p class="info-description">Our assessment is designed to help you identify your strengths and guide you toward a fulfilling career path. By answering a few simple questions, you’ll gain insights into your skills and preferences, allowing you to make informed decisions about your future. Whether you're exploring options or seeking a career change, this assessment will help you unlock your potential and find the right path for you.</p> <!-- Increased font size -->
+            <p class="info-description">Our assessment is designed to help you identify your strengths and guide you toward a fulfilling career path. 
+                By answering a few simple questions, you’ll gain insights into your skills and preferences, allowing you to make informed decisions about your future. 
+                Whether you're exploring options or seeking a career change, this assessment will help you unlock your potential and find the right path for you.</p> <!-- Increased font size -->
             <div class="container">
                 <a href="/questionnaire">
                     <button id="custom-button">Take a Test</button>

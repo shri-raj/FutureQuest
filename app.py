@@ -20,9 +20,9 @@ def predict():
     features = []
     
     attributes = ['thinking', 'problem', 'creativity', 'communication', 'leadership', 
-                    'empathy', 'science', 'teamwork', 'tech', 'design', 
-                    'math', 'medical', 'legal', 'business', 'research', 
-                    'marketing', 'teaching', 'software', 'artistic', 'attention']
+                  'empathy', 'science', 'teamwork', 'tech', 'design', 
+                  'math', 'medical', 'legal', 'business', 'research', 
+                  'marketing', 'teaching', 'software', 'artistic', 'attention']
 
     for attribute in attributes:
         scores = [
@@ -32,12 +32,16 @@ def predict():
         ]
         average_score = round(mean([score for score in scores if score > 0]))  # Calculate the average
         features.append(average_score)
-
-
+    print(features)
     features = pd.DataFrame([features])
 
-    prediction = model.predict(features)
-
+    # Get probabilities instead of direct predictions
+    probabilities = model.predict_proba(features)
+    
+    # Get top 3 predictions and their corresponding probabilities
+    top_indices = probabilities[0].argsort()[-3:][::-1]  # Get the indices of the top 3 probabilities
+    top_probabilities = probabilities[0][top_indices]
+    
     career_roles = {
         1: 'Research Scientist', 2: 'Pilot', 3: 'Engineer', 4: 'Fashion Designer',
         5: 'Pharmacist', 6: 'Accountant', 7: 'Teacher', 8: 'Lawyer',
@@ -46,8 +50,11 @@ def predict():
         16: 'Doctor', 17: 'Veterinarian', 18: 'Data Analyst', 19: 'Nurse'
     }
 
-    predicted_career = career_roles.get(prediction[0])
-    return render_template('results.html', career=predicted_career)
+    # Prepare the results
+    top_careers = [(career_roles[i + 1], top_probabilities[j]) for j, i in enumerate(top_indices)]
+    
+    return render_template('results.html', top_careers=top_careers)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
