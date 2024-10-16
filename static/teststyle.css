@@ -1,8 +1,9 @@
 :root {
-    --primary-color: #C96868; /* Updated primary color */
-    --secondary-color: #7EACB5; /* Updated secondary color */
-    --background-color: #FFF4EA; /* Updated background color */
-    --text-color: #34495e; /* Keep text color */
+    --primary-color: #C96868; /* Soft red */
+    --secondary-color: #7EACB5; /* Cool teal */
+    --background-color: #FFF4EA; /* Warm beige */
+    --text-color: #34495e; /* Navy text */
+    --border-color: #e0e0e0; /* Light grey border */
 }
 
 body {
@@ -18,45 +19,63 @@ header, main, footer {
     padding: 20px;
 }
 
-.submit-section {
-    background-color: #7EACB5; /* Updated button background color */
-    color: white; /* White text */
-    padding: 10px 20px; /* Padding for button */
-    border: none; /* Remove border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    font-size: 16px; /* Font size */
-    transition: background-color 0.3s; /* Smooth transition */
-}
-
-.submit-section:hover {
-    background-color: #5e8a8b; /* Darker shade on hover */
-}
-
 header {
     background-color: var(--primary-color);
     color: white;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
 main {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 20px auto;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 40px;
-    margin-top: 20px;
 }
 
 h1, h2 {
     color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* Updated Input Styles */
+input[type="text"], input[type="email"] {
+    width: 100%; /* Full width */
+    padding: 15px; /* More padding for larger feel */
+    font-size: 18px; /* Bigger font */
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    box-sizing: border-box; /* Keep padding inside the box */
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background-color: #fdfdfd; /* Slight background contrast */
+}
+
+input[type="text"]::placeholder, input[type="email"]::placeholder {
+    color: #999; /* Lighter placeholder text */
+}
+
+.submit-section {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 12px 24px; /* Bigger padding for a larger button */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px; /* Slightly bigger font */
+    transition: background-color 0.3s;
+}
+
+.submit-section:hover {
+    background-color: #5e8a8b; /* Darker teal */
 }
 
 .question {
     margin-bottom: 30px;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid var(--border-color);
     padding-bottom: 20px;
 }
 
@@ -71,6 +90,7 @@ h1, h2 {
     flex-direction: column;
     align-items: center;
     cursor: pointer;
+    color: var(--text-color);
 }
 
 .likert-scale input[type="radio"] {
@@ -81,15 +101,16 @@ button[type="submit"], .next-section {
     background-color: var(--secondary-color);
     color: white;
     border: none;
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 12px 24px; /* Bigger padding */
+    font-size: 18px; /* Larger button text */
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-top: 10px;
 }
 
 button[type="submit"]:hover, .next-section:hover {
-    background-color: #6b9c9a; /* Darker shade for hover */
+    background-color: #6b9c9a; /* Darker shade */
 }
 
 footer {
@@ -100,6 +121,7 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+    border-radius: 0 0 8px 8px;
 }
 
 .section {
